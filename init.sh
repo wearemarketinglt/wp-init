@@ -57,25 +57,9 @@ require_once(__DIR__ . '/includes/utils.php');
 require_once(__DIR__ . '/includes/init.php');
 EOL
 
-
-# Step 7: Edit .gitignore
-if [ -f ".gitignore" ]; then
-  sed -i.bak 's|public/|public_html/|g' .gitignore
-  rm .gitignore.bak
-  echo "/public_html/languages" >> .gitignore
-  echo "/public_html/upgrade-temp-backup" >> .gitignore
-  echo ".DS_Store" >> .gitignore
-  echo ".vscode" >> .gitignore
-  echo "/resources/css/output.css" >> .gitignore
-  echo "/temp" >> .gitignore
-else
-  echo "Error: '.gitignore' file does not exist."
-  exit 1
-fi
-
 mv resources/css/index.css resources/css/index.scss
 
-# Step 8: Edit '.env' file
+# Step 7: Edit '.env' file
 if [ -f ".env" ]; then
   # Search for WP_DEFAULT_THEME= and set it to the provided theme name
   if grep -q '^WP_DEFAULT_THEME=' .env; then
@@ -93,3 +77,6 @@ fi
 
 # Final message
 echo "WordPlate project customized successfully with theme '$THEME'."
+
+# Step 8: Delete the init.sh script
+rm -- "$0"
