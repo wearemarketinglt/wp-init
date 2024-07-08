@@ -18,6 +18,8 @@ Init the project with the desired theme name:
 
 ```
 chmod +x init.sh
+```
+```
 ./init.sh example-theme
 ```
 
