@@ -7,7 +7,7 @@
     },
     "dependencies": {
       "dotenv": "^16.4.5",
-      "vite": "^5.2.13",
+      "vite": "^5.3.6",
       "embla-carousel": "^8.1.5",
       "embla-carousel-auto-scroll": "^8.1.5",
       "embla-carousel-autoplay": "^8.1.5",
