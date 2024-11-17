@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 dotenv.config();
 
 export default defineConfig({
+  server: {
+    port: process.env.VITE_PORT || 5173,
+  },
   publicDir: 'resources/static',
   build: {
     assetsDir: '',

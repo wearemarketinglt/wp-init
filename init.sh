@@ -49,6 +49,15 @@ else
   exit 1
 fi
 
+# Replace ':5173/' with ':'.env('VITE_PORT', 5173).'/'
+if [ -f "$THEME_DIR/includes/init.php" ]; then
+  sed -i.bak "s|:5173/|:'.env('VITE_PORT', 5173).'/|g" $THEME_DIR/includes/init.php
+  rm $THEME_DIR/includes/init.php.bak
+else
+  echo "Error: '$THEME_DIR/includes/init.php' file does not exist."
+  exit 1
+fi
+
 # Step 6: Create new 'functions.php' with required line
 cat <<EOL > $THEME_DIR/functions.php
 <?php
