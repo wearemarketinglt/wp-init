@@ -45,7 +45,7 @@ WP_HOME=http://localhost/example-app/public_html
 Run the developement server:
 
 ```
-npm run start
+npm run dev
 ```
 ## Building
 

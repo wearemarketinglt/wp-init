@@ -66,7 +66,8 @@ require_once(__DIR__ . '/includes/utils.php');
 require_once(__DIR__ . '/includes/init.php');
 EOL
 
-mv resources/css/index.css resources/css/index.scss
+rm resources/css/index.css
+touch resources/css/index.css
 
 # Step 7: Edit '.env' file
 if [ -f ".env" ]; then

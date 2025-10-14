@@ -1,13 +1,16 @@
 import dotenv from 'dotenv';
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 dotenv.config();
 
 export default defineConfig({
+  publicDir: 'resources/static',
   server: {
     port: process.env.VITE_PORT || 5173,
+    cors: true,
+    strictPort: true,
   },
-  publicDir: 'resources/static',
   build: {
     assetsDir: '',
     emptyOutDir: true,
@@ -29,5 +32,6 @@ export default defineConfig({
         }
       },
     },
+    tailwindcss(),
   ],
 });

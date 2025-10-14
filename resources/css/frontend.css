@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@source '../../public_html/themes/**/*.php';
+@source '../**/*.js';
+
+@import "./base/tw.css";
+@import "./base/body.css";
+@import "./index.css";
+@import "./blocks.css";
